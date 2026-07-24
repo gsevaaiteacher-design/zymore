@@ -1,0 +1,101 @@
+name: zymore
+description: "Zymore - Free Digital Marketplace App"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # 🎯 Firebase & Backend
+  firebase_core: ^4.12.1
+  firebase_auth: ^6.5.6
+  cloud_firestore: ^6.7.1
+  firebase_storage: ^13.4.5
+  
+  # 🔐 Authentication
+  google_sign_in: ^7.2.0
+  
+  # 📱 State Management
+  provider: ^6.0.5
+  
+  # 🎨 UI Components
+  cupertino_icons: ^1.0.6
+  flutter_svg: ^2.0.9
+  cached_network_image: ^3.3.0
+  shimmer: ^3.0.0
+  carousel_slider: ^5.1.2
+  
+  # 🖼️ Image & File Handling
+  image_picker: ^1.0.7
+  file_picker: ^11.0.2
+  path_provider: ^2.1.0
+  permission_handler: ^12.0.3
+  
+  # 📥 Download Manager
+  flutter_downloader: ^1.11.5
+  open_file: ^4.0.0
+  
+  # 💰 Ad Monetization
+  google_mobile_ads: ^9.0.0
+  
+  # 🌐 Networking & Utilities
+  url_launcher: ^6.2.1
+  intl: ^0.20.3
+  connectivity_plus: ^7.3.1
+  shared_preferences: ^2.2.2
+  
+  # 🤖 AI Features (Future)
+  http: ^1.1.0
+  
+  # 📊 Analytics
+  firebase_analytics: ^12.4.5
+  
+  # 🔔 Notifications
+  flutter_local_notifications: ^22.1.0
+  firebase_messaging: ^16.4.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  # 📁 Assets
+  assets:
+    # Images
+    - assets/images/logo.png
+    - assets/images/splash.png
+    - assets/images/banner1.png
+    - assets/images/banner2.png
+    - assets/images/banner3.png
+    
+    # Icons
+    - assets/icons/ic_launcher.png
+    - assets/icons/ic_notification.png
+    - assets/icons/ic_download.png
+    - assets/icons/ic_upload.png
+
+  # 🔤 Fonts
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-Light.ttf
+          weight: 300
+
+  # ✅ Flutter Native Code
+  module:
+    androidX: true
+    androidPackage: com.zymore.app
+    iosBundleIdentifier: com.zymore.app
