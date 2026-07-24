@@ -472,8 +472,8 @@ class ProductProvider extends ChangeNotifier {
 
         // Update product like count
         if (product != null) {
-          product.likes = product.likes - 1;
-          product.isLiked = false;
+          final updated = product.copyWith(likes: product.likes - 1, isLiked: false);
+          _products[productIndex] = updated;
         }
 
         await _updateProductLikeCount(productId, -1);
@@ -496,8 +496,8 @@ class ProductProvider extends ChangeNotifier {
 
         // Update product like count
         if (product != null) {
-          product.likes = product.likes + 1;
-          product.isLiked = true;
+          final updated = product.copyWith(likes: product.likes + 1, isLiked: true);
+          _products[productIndex] = updated;
         }
 
         await _updateProductLikeCount(productId, 1);
@@ -587,18 +587,20 @@ class ProductProvider extends ChangeNotifier {
     try {
       // Add seller info
       final user = _auth.currentUser;
-      product.sellerId = userId;
-      product.sellerName = user?.displayName ?? 'Anonymous';
-      product.sellerPhoto = user?.photoURL ?? '';
-      product.createdAt = DateTime.now();
-      product.isActive = true;
+      product = product.copyWith(
+        sellerId: userId,
+        sellerName: user?.displayName ?? 'Anonymous',
+        sellerPhoto: user?.photoURL ?? '',
+        createdAt: DateTime.now(),
+        isActive: true,
+      );
 
       // Save to Firestore
       final docRef = await _firestore
           .collection(AppConstants.collectionProducts)
           .add(product.toFirestore());
 
-      product.id = docRef.id;
+      product = product.copyWith(id: docRef.id);
 
       // Add to local list
       _products.insert(0, product);

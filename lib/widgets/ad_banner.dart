@@ -130,7 +130,7 @@ class _AdBannerState extends State<AdBanner>
         listener: BannerAdListener(
           onAdLoaded: (ad) {
             setState(() {
-              _bannerAd = ad;
+              _bannerAd = ad as BannerAd;
               _isLoaded = true;
               _isLoading = false;
               _adHeight = ad.size.height.toDouble();
@@ -368,8 +368,8 @@ class _AdBannerState extends State<AdBanner>
     final screenWidth = MediaQuery.of(context).size.width;
     return AdSize.getAnchoredAdaptiveBannerAdSize(
       screenWidth.toInt(),
-      AdSize.fullWidth,
-    );
+      Orientation.portrait,
+    ) ?? AdSize.banner;
   }
 
   String _getAdUnitId() {

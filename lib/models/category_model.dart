@@ -22,6 +22,7 @@
 // ============================================================
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 
 // ============================================================
 // 📂 CATEGORY MODEL
@@ -63,7 +64,7 @@ class CategoryModel {
   CategoryModel({
     required this.id,
     required this.name,
-    this.slug = '',
+    String? slug,
     this.description = '',
     required this.icon,
     this.color = '#FF6B35',
@@ -76,7 +77,7 @@ class CategoryModel {
     this.updatedAt,
     this.isSelected = false,
   }) : createdAt = createdAt ?? DateTime.now(),
-       slug = slug.isNotEmpty ? slug : _generateSlug(name);
+       slug = (slug != null && slug.isNotEmpty) ? slug : _generateSlug(name);
 
   // ── FROM FIRESTORE ──
   factory CategoryModel.fromFirestore(DocumentSnapshot doc) {

@@ -245,12 +245,12 @@ class AdService {
         adUnitId: adUnitId,
         size: AdSize.getAnchoredAdaptiveBannerAdSize(
           width.floor(),
-          AdSize.fullWidth,
+          Orientation.portrait,
         ),
         request: const AdRequest(),
         listener: BannerAdListener(
           onAdLoaded: (ad) {
-            _bannerAd = ad;
+            _bannerAd = ad as BannerAd;
             _isBannerLoaded = true;
             _emitEvent('ad.banner.loaded', {});
             onLoaded();
@@ -414,19 +414,19 @@ class AdService {
           callToActionTextStyle: NativeTemplateTextStyle(
             textColor: Colors.blue,
             backgroundColor: Colors.transparent,
-            style: NativeTemplate TextStyle.button,
+            style: NativeTemplateTextStyle.button,
             size: 16.0,
           ),
           primaryTextStyle: NativeTemplateTextStyle(
             textColor: Colors.black87,
             backgroundColor: Colors.transparent,
-            style: NativeTemplate TextStyle.title,
+            style: NativeTemplateTextStyle.title,
             size: 18.0,
           ),
           secondaryTextStyle: NativeTemplateTextStyle(
             textColor: Colors.black54,
             backgroundColor: Colors.transparent,
-            style: NativeTemplate TextStyle.body,
+            style: NativeTemplateTextStyle.body,
             size: 14.0,
           ),
         ),

@@ -682,7 +682,7 @@ class _UploadScreenState extends State<UploadScreen> {
                     borderSide: const BorderSide(color: AppColors.primary),
                   ),
                 ),
-                onSubmitted: (_) => _addTag(),
+                onFieldSubmitted: (_) => _addTag(),
               ),
             ),
             const SizedBox(width: 8),

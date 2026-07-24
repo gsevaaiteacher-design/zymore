@@ -21,7 +21,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../utils/constants.dart';
-import '../utils/theme.dart';
 
 // ============================================================
 // 🎯 THEME PROVIDER - State Management
@@ -253,18 +252,15 @@ class ThemeProvider extends ChangeNotifier {
       primaryColorLight: AppColors.primaryLight,
       scaffoldBackgroundColor: AppColors.scaffoldBackgroundDark,
       cardColor: AppColors.cardBackgroundDark,
-      backgroundColor: AppColors.backgroundDark,
 
       colorScheme: const ColorScheme.dark(
         primary: AppColors.primary,
         secondary: AppColors.accent,
         surface: AppColors.cardBackgroundDark,
-        background: AppColors.backgroundDark,
         error: AppColors.error,
         onPrimary: Colors.white,
         onSecondary: Colors.white,
         onSurface: Colors.white,
-        onBackground: Colors.white,
         onError: Colors.white,
       ),
 
@@ -369,18 +365,15 @@ class ThemeProvider extends ChangeNotifier {
       primaryColorLight: AppColors.primaryLight,
       scaffoldBackgroundColor: AppColors.scaffoldBackground,
       cardColor: AppColors.cardBackground,
-      backgroundColor: AppColors.background,
 
       colorScheme: const ColorScheme.light(
         primary: AppColors.primary,
         secondary: AppColors.accent,
         surface: AppColors.cardBackground,
-        background: AppColors.background,
         error: AppColors.error,
         onPrimary: Colors.white,
         onSecondary: Colors.white,
         onSurface: AppColors.textPrimary,
-        onBackground: AppColors.textPrimary,
         onError: Colors.white,
       ),
 
@@ -492,18 +485,15 @@ class ThemeProvider extends ChangeNotifier {
       primaryColorLight: forestAccent,
       scaffoldBackgroundColor: forestBackground,
       cardColor: forestCard,
-      backgroundColor: forestBackground,
 
       colorScheme: ColorScheme.dark(
         primary: forestPrimary,
         secondary: forestSecondary,
         surface: forestCard,
-        background: forestBackground,
         error: AppColors.error,
         onPrimary: Colors.white,
         onSecondary: Colors.white,
         onSurface: forestText,
-        onBackground: forestText,
         onError: Colors.white,
       ),
 
@@ -615,18 +605,15 @@ class ThemeProvider extends ChangeNotifier {
       primaryColorLight: sunAccent,
       scaffoldBackgroundColor: sunBackground,
       cardColor: sunCard,
-      backgroundColor: sunBackground,
 
       colorScheme: ColorScheme.dark(
         primary: sunPrimary,
         secondary: sunSecondary,
         surface: sunCard,
-        background: sunBackground,
         error: AppColors.error,
         onPrimary: Colors.white,
         onSecondary: Colors.white,
         onSurface: sunText,
-        onBackground: sunText,
         onError: Colors.white,
       ),
 
@@ -738,18 +725,15 @@ class ThemeProvider extends ChangeNotifier {
       primaryColorLight: oceanAccent,
       scaffoldBackgroundColor: oceanBackground,
       cardColor: oceanCard,
-      backgroundColor: oceanBackground,
 
       colorScheme: ColorScheme.dark(
         primary: oceanPrimary,
         secondary: oceanSecondary,
         surface: oceanCard,
-        background: oceanBackground,
         error: AppColors.error,
         onPrimary: Colors.white,
         onSecondary: Colors.white,
         onSurface: oceanText,
-        onBackground: oceanText,
         onError: Colors.white,
       ),
 

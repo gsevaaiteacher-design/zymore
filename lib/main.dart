@@ -230,6 +230,9 @@ class _ZymoreAppState extends State<ZymoreApp> with WidgetsBindingObserver {
       case AppLifecycleState.detached:
         print('❌ App Detached');
         break;
+      case AppLifecycleState.hidden:
+        print('👁️ App Hidden');
+        break;
     }
   }
 

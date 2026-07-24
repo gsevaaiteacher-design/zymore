@@ -303,7 +303,7 @@ class Validators {
     }
 
     // Check for valid characters (letters, spaces, hyphens, apostrophes)
-    if (!RegExp(r'^[a-zA-Z\s\-\.\']+$').hasMatch(name)) {
+    if (!RegExp(r"^[a-zA-Z\s\-.'\u00C0-\u024F]+$").hasMatch(name)) {
       return ValidationResult.failure('Name contains invalid characters');
     }
 
@@ -312,7 +312,7 @@ class Validators {
       return ValidationResult.failure('Name cannot contain multiple spaces');
     }
 
-    return ValidationResult.success(data = {'name': name});
+    return ValidationResult.success(data: {'name': name});
   }
 
   // ============================================================
